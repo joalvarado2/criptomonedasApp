@@ -23,7 +23,7 @@ const Heading = styled.h1`
   color: #fff;
   text-align: left;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 30px;
   margin-bottom: 50px;
   margin-top: 80px;
 
