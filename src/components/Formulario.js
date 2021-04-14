@@ -23,7 +23,7 @@ const Boton = styled.input`
     }
 `
 
-const Formulario = () => {
+const Formulario = ({setMoneda, setCriptomoneda}) => {
 
     const [listaCripto, setListaCripto] = useState([]);
     const [error, setError] = useState(false);
@@ -46,7 +46,6 @@ const Formulario = () => {
         const consultarAPI = async () => {
             const url= "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD"
             const resultado = await axios.get(url);
-
             setListaCripto(resultado.data.Data);
         }
         consultarAPI();
@@ -64,6 +63,8 @@ const Formulario = () => {
 
         // pasar los datos al componente principal
         setError(false);
+        setMoneda(state);
+        setCriptomoneda(criptomoneda);
     }
 
     return (
